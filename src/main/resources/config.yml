@@ -1,0 +1,150 @@
+# QuestPlus Configuration File
+# Website: https://github.com/Fl1uxxNoob/QuestPlus
+# Version: 1.0.0
+# Developed By Fl1uxxNoob
+
+# Database Configuration
+database:
+  # Database type: sqlite or mysql
+  type: sqlite
+  
+  # MySQL settings (only used if type is mysql)
+  mysql:
+    host: localhost
+    port: 3306
+    database: questplus
+    username: root
+    password: ""
+    
+  # Connection pool settings
+  pool-size: 10
+
+# Quest Limit Configuration
+quest-limits:
+  # Enable quest limits
+  enabled: true
+  
+  # Default quest limit for players
+  default: 3
+  
+  # Group-specific quest limits (requires LuckPerms)
+  groups:
+    vip: 5
+    supporter: 8
+    premium: 10
+    admin: 999
+
+# GUI Configuration
+gui:
+  # GUI title (supports MiniMessage formatting)
+  title: "<gradient:#00ff00:#0080ff>QuestPlus</gradient>"
+  
+  # GUI size (must be multiple of 9, max 54)
+  size: 54
+  
+  # Update interval for GUI (in ticks, 20 ticks = 1 second)
+  update-interval: 20
+  
+  quest-menu:
+    title: "<gradient:#00ff00:#0080ff>Quest Menu</gradient>"
+    
+  quest-progress:
+    title: "<yellow>{quest} - Progress</yellow>"
+
+# Auto-save Configuration
+auto-save:
+  # Enable automatic saving of quest progress
+  enabled: true
+  
+  # Auto-save interval in seconds
+  interval: 300
+
+# Performance Settings
+performance:
+  # Maximum quests to process per player per tick
+  max-quests-per-tick: 10
+  
+  # Cache player data in memory
+  cache-player-data: true
+  
+  # Cache timeout in minutes
+  cache-timeout: 30
+
+# Debug Settings
+debug:
+  # Enable debug logging
+  enabled: false
+  
+  # Log quest progress updates
+  log-progress: false
+  
+  # Log database operations
+  log-database: false
+
+# Integration Settings
+integrations:
+  # PlaceholderAPI settings
+  placeholderapi:
+    enabled: true
+    
+  # LuckPerms settings
+  luckperms:
+    enabled: true
+    # Use primary group for quest limits
+    use-primary-group: true
+    # Use highest weight group for quest limits
+    use-highest-weight: false
+
+# Notification Settings
+notifications:
+  # Send progress notifications
+  progress-notifications: true
+  
+  # Progress notification interval (every X progress points)
+  progress-interval: 5
+  
+  # Send completion notifications
+  completion-notifications: true
+  
+  # Send time warning notifications
+  time-warnings: true
+  
+  # Time warning thresholds (in seconds)
+  time-warning-thresholds:
+    - 300  # 5 minutes
+    - 60   # 1 minute
+    - 30   # 30 seconds
+
+# Sound Settings
+sounds:
+  # Enable sound effects
+  enabled: true
+  
+  # Quest accepted sound
+  quest-accepted: "entity.experience_orb.pickup"
+  
+  # Quest completed sound
+  quest-completed: "entity.player.levelup"
+  
+  # Quest progress sound
+  quest-progress: "block.note_block.pling"
+  
+  # Quest failed/expired sound
+  quest-failed: "entity.villager.no"
+  
+  # Reward claimed sound
+  reward-claimed: "entity.firework_rocket.launch"
+
+# Default Quest Settings
+default-quest-settings:
+  # Default time limit (0 = no limit)
+  time-limit: 0
+  
+  # Default cooldown between attempts
+  cooldown: 0
+  
+  # Quests are repeatable by default
+  repeatable: true
+  
+  # Default display item
+  display-item: PAPER

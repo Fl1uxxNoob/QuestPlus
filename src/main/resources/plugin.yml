@@ -1,0 +1,110 @@
+name: QuestPlus
+version: 1.0.0
+main: net.fliuxx.questplus.QuestPlus
+api-version: 1.20
+author: Fl1uxxNoob
+website: https://github.com/Fl1uxxNoob/QuestPlus
+description: A comprehensive quest plugin for Minecraft Paper servers
+
+softdepend:
+  - PlaceholderAPI
+  - LuckPerms
+
+commands:
+  questplus:
+    description: Main QuestPlus command
+    usage: /questplus <subcommand>
+    aliases: [qp, quest, quests]
+  questadmin:
+    description: QuestPlus admin commands
+    usage: /questadmin <subcommand>
+    permission: questplus.admin
+    aliases: [qpa, questplusadmin]
+
+permissions:
+  questplus.use:
+    description: Allows using basic quest commands
+    default: true
+
+  questplus.admin:
+    description: Allows using admin commands
+    default: op
+
+  questplus.quest.*:
+    description: Allows access to all quests
+    default: true
+    children:
+      questplus.quest.collect-diamonds: true
+      questplus.quest.zombie-slayer: true
+      questplus.quest.master-angler: true
+      questplus.quest.mountain-climber: true
+      questplus.quest.lumberjack: true
+      questplus.quest.explorer: true
+      questplus.quest.merchant: true
+      questplus.quest.survivor: true
+      questplus.quest.wanderer: true
+      questplus.quest.archaeologist: true
+      questplus.quest.kangaroo: true
+      questplus.quest.gladiator: true
+      questplus.quest.daily-collector: true
+      questplus.quest.vip: false
+
+  questplus.bypass.limit:
+    description: Bypasses quest limits
+    default: op
+
+  questplus.quest.collect-diamonds:
+    description: Access to diamond collection quest
+    default: true
+
+  questplus.quest.zombie-slayer:
+    description: Access to zombie slayer quest
+    default: true
+
+  questplus.quest.master-angler:
+    description: Access to fishing quest
+    default: true
+
+  questplus.quest.mountain-climber:
+    description: Access to mountain climbing quest
+    default: true
+
+  questplus.quest.lumberjack:
+    description: Access to lumberjack quest
+    default: true
+
+  questplus.quest.explorer:
+    description: Access to biome exploration quest
+    default: true
+
+  questplus.quest.merchant:
+    description: Access to villager trading quest
+    default: true
+
+  questplus.quest.survivor:
+    description: Access to survival quest
+    default: true
+
+  questplus.quest.wanderer:
+    description: Access to travel quest
+    default: true
+
+  questplus.quest.archaeologist:
+    description: Access to structure finding quest
+    default: true
+
+  questplus.quest.kangaroo:
+    description: Access to jumping quest
+    default: true
+
+  questplus.quest.gladiator:
+    description: Access to PvP quest
+    default: true
+
+  questplus.quest.daily-collector:
+    description: Access to daily collection quest
+    default: true
+
+  questplus.quest.vip:
+    description: Access to VIP exclusive quest
+    default: false

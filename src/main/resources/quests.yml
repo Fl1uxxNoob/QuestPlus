@@ -1,0 +1,311 @@
+# QuestPlus Quest Configuration
+# Define your custom quests here
+# Developed By Fl1uxxNoob
+
+quests:
+  # Example Collection Quest
+  collect-diamonds:
+    name: "Diamond Collector"
+    description: "Collect diamonds to become rich!"
+    lore:
+      - "Diamonds are a miner's best friend"
+      - "Find them deep underground"
+    type: COLLECT
+    target: 10
+    display-item: DIAMOND
+    type-config:
+      materials:
+        - DIAMOND
+      any-item: false
+    reward:
+      commands:
+        - "give <player> diamond 5"
+        - "eco give <player> 1000"
+      message: "<green>You've been rewarded with 5 diamonds and $1000!</green>"
+    permission: "questplus.quest.collect-diamonds"
+    time-limit: 1800  # 30 minutes
+    repeatable: true
+    cooldown: 3600    # 1 hour cooldown
+
+  # Example Kill Mob Quest
+  zombie-slayer:
+    name: "Zombie Slayer"
+    description: "Kill zombies to protect the village!"
+    lore:
+      - "Zombies threaten our peaceful village"
+      - "Show them no mercy!"
+    type: KILL_MOB
+    target: 20
+    display-item: IRON_SWORD
+    type-config:
+      mobs:
+        - ZOMBIE
+        - ZOMBIE_VILLAGER
+      any-mob: false
+    reward:
+      commands:
+        - "give <player> emerald 10"
+        - "xp give <player> 100"
+      message: "<green>The village thanks you for your service!</green>"
+    time-limit: 600   # 10 minutes
+    repeatable: true
+    cooldown: 1800    # 30 minutes
+
+  # Example Fishing Quest
+  master-angler:
+    name: "Master Angler"
+    description: "Catch fish to become a master angler!"
+    lore:
+      - "The ocean holds many treasures"
+      - "Cast your line and be patient"
+    type: FISH
+    target: 15
+    display-item: FISHING_ROD
+    type-config:
+      items:
+        - COD
+        - SALMON
+        - TROPICAL_FISH
+        - PUFFERFISH
+      any-fish: false
+    reward:
+      commands:
+        - "give <player> enchanted_book 1"
+        - "give <player> experience_bottle 10"
+    repeatable: true
+    cooldown: 7200    # 2 hours
+
+  # Example Location Visit Quest
+  mountain-climber:
+    name: "Mountain Climber"
+    description: "Reach the peak of the mountain!"
+    lore:
+      - "Scale the highest peaks"
+      - "Enjoy the breathtaking view"
+    type: REACH_ALTITUDE
+    target: 1
+    display-item: IRON_BOOTS
+    type-config:
+      altitude: 200
+    reward:
+      commands:
+        - "give <player> elytra 1"
+        - "give <player> firework_rocket 64"
+      message: "<green>You've conquered the mountain! Enjoy your wings!</green>"
+    repeatable: false
+
+  # Example Break Blocks Quest
+  lumberjack:
+    name: "Lumberjack"
+    description: "Cut down trees for the village!"
+    lore:
+      - "The village needs wood"
+      - "Help them by cutting trees"
+    type: BREAK_BLOCK
+    target: 100
+    display-item: IRON_AXE
+    type-config:
+      blocks:
+        - OAK_LOG
+        - BIRCH_LOG
+        - SPRUCE_LOG
+        - JUNGLE_LOG
+        - ACACIA_LOG
+        - DARK_OAK_LOG
+        - MANGROVE_LOG
+        - CHERRY_LOG
+      any-block: false
+    reward:
+      commands:
+        - "give <player> diamond_axe 1"
+        - "enchant <player> efficiency 5"
+    repeatable: true
+    cooldown: 3600
+
+  # Example Biome Visit Quest
+  explorer:
+    name: "Biome Explorer"
+    description: "Explore different biomes!"
+    lore:
+      - "The world is vast and diverse"
+      - "Discover new landscapes"
+    type: VISIT_LOCATION
+    target: 1
+    display-item: COMPASS
+    type-config:
+      biomes:
+        - JUNGLE
+        - DESERT
+        - SAVANNA
+    reward:
+      commands:
+        - "give <player> map 1"
+        - "give <player> boat 1"
+    repeatable: true
+    cooldown: 1800
+
+  # Example Villager Trade Quest
+  merchant:
+    name: "Merchant"
+    description: "Trade with villagers to boost the economy!"
+    lore:
+      - "Villagers have valuable goods"
+      - "Help the economy by trading"
+    type: VILLAGER_TRADE
+    target: 5
+    display-item: EMERALD
+    reward:
+      commands:
+        - "give <player> emerald 20"
+        - "eco give <player> 5000"
+    repeatable: true
+    cooldown: 7200
+
+  # Example Survival Quest
+  survivor:
+    name: "Survivor"
+    description: "Survive in the wilderness!"
+    lore:
+      - "Test your survival skills"
+      - "Stay alive in harsh conditions"
+    type: SURVIVE
+    target: 100  # Progress is based on time percentage
+    display-item: COOKED_BEEF
+    type-config:
+      time-seconds: 300  # 5 minutes
+      min-health: 10.0   # Half hearts
+      min-food-level: 10 # Half hunger bars
+      biomes:
+        - DESERT
+        - FROZEN_OCEAN
+    reward:
+      commands:
+        - "give <player> golden_apple 5"
+        - "give <player> enchanted_golden_apple 1"
+    time-limit: 600  # 10 minutes to complete
+    repeatable: true
+    cooldown: 3600
+
+  # Example Travel Quest
+  wanderer:
+    name: "Wanderer"
+    description: "Travel great distances!"
+    lore:
+      - "The journey of a thousand blocks"
+      - "Begins with a single step"
+    type: TRAVEL
+    target: 10000  # 10000 blocks (converted to centimeters internally)
+    display-item: LEATHER_BOOTS
+    type-config:
+      type: ANY  # WALK, SWIM, FLY, or ANY
+      distance: 1000
+    reward:
+      commands:
+        - "give <player> horse_spawn_egg 1"
+        - "give <player> saddle 1"
+    repeatable: true
+    cooldown: 7200
+
+  # Example Structure Finding Quest
+  archaeologist:
+    name: "Archaeologist"
+    description: "Discover ancient structures!"
+    lore:
+      - "Uncover the secrets of the past"
+      - "Find ancient ruins and treasures"
+    type: FIND_STRUCTURE
+    target: 1
+    display-item: BRUSH
+    type-config:
+      structures:
+        - VILLAGE
+        - DESERT_PYRAMID
+        - JUNGLE_PYRAMID
+        - STRONGHOLD
+      search-radius: 1000
+    reward:
+      commands:
+        - "give <player> ancient_debris 5"
+        - "give <player> book 10"
+    repeatable: true
+    cooldown: 10800  # 3 hours
+
+  # Example Jump Quest
+  kangaroo:
+    name: "Kangaroo"
+    description: "Jump around like a kangaroo!"
+    lore:
+      - "Hop, hop, hop!"
+      - "Show off your jumping skills"
+    type: JUMP
+    target: 100
+    display-item: RABBIT_FOOT
+    reward:
+      commands:
+        - "give <player> potion{Potion:\"minecraft:long_leaping\"} 5"
+      message: "<green>You've earned some jumping potions!</green>"
+    repeatable: true
+    cooldown: 1800
+
+  # Example Player Kill Quest (PvP)
+  gladiator:
+    name: "Gladiator"
+    description: "Defeat other players in combat!"
+    lore:
+      - "Prove your combat prowess"
+      - "Only the strong survive"
+    type: KILL_PLAYER
+    target: 3
+    display-item: NETHERITE_SWORD
+    reward:
+      commands:
+        - "give <player> totem_of_undying 1"
+        - "give <player> diamond 10"
+    permission: "questplus.quest.pvp"
+    time-limit: 3600  # 1 hour
+    repeatable: true
+    cooldown: 7200
+
+  # Example Daily Quest
+  daily-collector:
+    name: "Daily Collector"
+    description: "Collect various items daily!"
+    lore:
+      - "A little bit of everything"
+      - "Daily variety keeps things interesting"
+    type: COLLECT
+    target: 50
+    display-item: CHEST
+    type-config:
+      any-item: true
+    reward:
+      commands:
+        - "give <player> diamond 3"
+        - "eco give <player> 2000"
+        - "xp give <player> 200"
+    time-limit: 86400  # 24 hours
+    repeatable: true
+    cooldown: 86400   # Daily cooldown
+
+  # VIP Only Quest
+  vip-special:
+    name: "VIP Special"
+    description: "Exclusive quest for VIP members!"
+    lore:
+      - "VIP perks at their finest"
+      - "Exclusive rewards await"
+    type: COLLECT
+    target: 64
+    display-item: GOLD_INGOT
+    type-config:
+      materials:
+        - GOLD_INGOT
+        - GOLD_NUGGET
+    reward:
+      commands:
+        - "give <player> beacon 1"
+        - "give <player> netherite_ingot 5"
+        - "eco give <player> 10000"
+    permission: "questplus.quest.vip"
+    repeatable: true
+    cooldown: 21600  # 6 hours

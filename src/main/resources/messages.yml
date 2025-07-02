@@ -1,0 +1,134 @@
+# QuestPlus Messages Configuration
+# Supports MiniMessage formatting: https://docs.adventure.kyori.net/minimessage/format.html
+# Developed By Fl1uxxNoob
+
+# Global
+prefix: "<gradient:#00ff00:#0080ff>[QuestPlus]</gradient> "
+no-permission: "<red>You don't have permission to use this command.</red>"
+player-only: "<red>This command can only be used by players.</red>"
+reload-success: "<green>QuestPlus has been reloaded successfully!</green>"
+reload-failed: "<red>Failed to reload QuestPlus. Check console for errors.</red>"
+
+# Quest Messages
+quest-not-found: "<red>Quest not found.</red>"
+quest-already-active: "<yellow>You already have this quest active.</yellow>"
+quest-not-active: "<red>You don't have this quest active.</red>"
+quest-limit-reached: "<red>You have reached your quest limit. Complete or abandon some quests first.</red>"
+quest-on-cooldown: "<yellow>This quest is on cooldown. Please wait before accepting it again.</yellow>"
+
+quest-accepted: "<green>Quest accepted: <yellow>{quest}</yellow></green>"
+quest-completed: "<green>✓ Quest completed: <yellow>{quest}</yellow>! Click to claim your reward.</green>"
+quest-abandoned: "<yellow>Quest abandoned: {quest}</yellow>"
+quest-expired: "<red>Quest expired: <yellow>{quest}</yellow></red>"
+quest-failed: "<red>Quest failed: <yellow>{quest}</yellow></red>"
+
+quest-progress: "<blue>Quest Progress: <yellow>{quest}</yellow> - {current}/{target} ({percentage}%)</blue>"
+quest-time-left: "<yellow>Time remaining: {time}</yellow>"
+
+# Reward Messages
+reward-claimed: "<green>Reward claimed for quest: <yellow>{quest}</yellow>!</green>"
+reward-already-claimed: "<yellow>You have already claimed the reward for this quest.</yellow>"
+
+# GUI Messages
+gui:
+  quest-menu:
+    title: "Quest Menu"
+  
+  quest-progress:
+    title: "{quest} - Progress"
+  
+  items:
+    available-quests: "Available Quests"
+    active-quests: "Active Quests" 
+    completed-quests: "Completed Quests"
+    statistics: "Statistics"
+    close: "Close"
+    back: "Back"
+    next-page: "Next Page"
+    previous-page: "Previous Page"
+    
+    quest-accept: "<green>Click to accept this quest!</green>"
+    quest-claim: "<green>Click to claim your reward!</green>"
+    quest-view: "<yellow>Click to view details</yellow>"
+
+# Command Help Messages
+help:
+  player:
+    header: "<gradient:#00ff00:#0080ff>=== QuestPlus Commands ===</gradient>"
+    commands:
+      - "<white>/questplus</white> <gray>- Open quest GUI</gray>"
+      - "<white>/questplus accept <quest-id></white> <gray>- Accept a quest</gray>"
+      - "<white>/questplus abandon <quest-id></white> <gray>- Abandon a quest</gray>"
+      - "<white>/questplus progress [quest-id]</white> <gray>- View progress</gray>"
+      - "<white>/questplus claim <quest-id></white> <gray>- Claim quest reward</gray>"
+      - "<white>/questplus list [type]</white> <gray>- List quests</gray>"
+      - "<white>/questplus stats</white> <gray>- View your statistics</gray>"
+      
+  admin:
+    header: "<gradient:#ff0000:#ff8000>=== QuestPlus Admin Commands ===</gradient>"
+    commands:
+      - "<white>/questadmin reload</white> <gray>- Reload the plugin</gray>"
+      - "<white>/questadmin give <player> <quest-id></white> <gray>- Give quest to player</gray>"
+      - "<white>/questadmin remove <player> <quest-id></white> <gray>- Remove quest from player</gray>"
+      - "<white>/questadmin complete <player> <quest-id></white> <gray>- Complete quest for player</gray>"
+      - "<white>/questadmin progress <player> <quest-id> <amount></white> <gray>- Set quest progress</gray>"
+      - "<white>/questadmin reset <player> <quest-id></white> <gray>- Reset quest progress</gray>"
+      - "<white>/questadmin info <quest-id></white> <gray>- View quest information</gray>"
+      - "<white>/questadmin list [player]</white> <gray>- List quests or player quests</gray>"
+      - "<white>/questadmin stats [player]</white> <gray>- View statistics</gray>"
+      - "<white>/questadmin purge <player></white> <gray>- Remove all quest data for player</gray>"
+
+# Error Messages
+errors:
+  database-error: "<red>Database error occurred. Please contact an administrator.</red>"
+  unknown-error: "<red>An unknown error occurred. Please try again later.</red>"
+  invalid-number: "<red>Invalid number: {input}</red>"
+  invalid-quest-id: "<red>Invalid quest ID: {input}</red>"
+  invalid-player: "<red>Player not found: {input}</red>"
+  
+# Statistics Messages
+stats:
+  header: "<gradient:#00ff00:#0080ff>=== Quest Statistics ===</gradient>"
+  active-quests: "<yellow>Active Quests: <white>{count}</white></yellow>"
+  completed-quests: "<green>Completed Quests: <white>{count}</white></green>"
+  available-quests: "<blue>Available Quests: <white>{count}</white></blue>"
+  completion-rate: "<aqua>Completion Rate: <white>{rate}%</white></aqua>"
+  quest-limit: "<gold>Quest Limit: <white>{active}/{limit}</white></gold>"
+  
+# Quest Type Descriptions
+quest-types:
+  collect: "Collect {target} {items}"
+  kill-mob: "Kill {target} {mobs}"
+  visit-location: "Visit {location}"
+  fish: "Fish {target} {items}"
+  break-block: "Break {target} {blocks}"
+  kill-player: "Kill {target} players"
+  reach-altitude: "Reach altitude Y={altitude}"
+  find-structure: "Find {structure}"
+  villager-interact: "Interact with {target} villagers"
+  villager-trade: "Complete {target} trades with villagers"
+  survive: "Survive for {time} under specific conditions"
+  travel: "Travel {distance} blocks"
+  jump: "Jump {target} times"
+
+# Quest Status Messages
+status:
+  not-started: "<gray>Not Started</gray>"
+  active: "<yellow>Active</yellow>"
+  completed: "<green>Completed</green>"
+  claimed: "<gray>Claimed</gray>"
+  expired: "<red>Expired</red>"
+  failed: "<red>Failed</red>"
+
+# Time Formats
+time:
+  days: "{days}d"
+  hours: "{hours}h" 
+  minutes: "{minutes}m"
+  seconds: "{seconds}s"
+  
+# Number Formats
+numbers:
+  thousand: "K"
+  million: "M"
+  billion: "B"

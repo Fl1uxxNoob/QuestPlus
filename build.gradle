@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'net.fliuxx'
+version = '1.0.0'
+description = 'A comprehensive quest plugin for Minecraft Paper servers'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        name = "placeholderapi"
+        url = "https://repo.extendedclip.com/content/repositories/placeholderapi/"
+    }
+    maven {
+        name = "sonatype-snapshots"
+        url = "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    // Paper API
+    compileOnly "io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT"
+
+    // Adventure API
+    compileOnly "net.kyori:adventure-api:4.14.0"
+    compileOnly "net.kyori:adventure-text-minimessage:4.14.0"
+
+    // PlaceholderAPI
+    compileOnly "me.clip:placeholderapi:2.11.5"
+
+    // LuckPerms API
+    compileOnly "net.luckperms:api:5.4"
+
+    // SQLite JDBC
+    implementation "org.xerial:sqlite-jdbc:3.36.0.3"
+
+    // MySQL Connector
+    implementation "mysql:mysql-connector-java:8.0.33"
+
+    // HikariCP
+    implementation "com.zaxxer:HikariCP:5.0.1"
+}
+
+shadowJar {
+    relocate 'com.zaxxer.hikari', 'net.fliuxx.questplus.libs.hikari'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
